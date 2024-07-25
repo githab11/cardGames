@@ -20,35 +20,12 @@ class Card:
         self.value = self.getValue()
         
     def getValue(self):
-        # values for blackjack
-        if self.rank == 'A':
-            return 11
-        elif self.rank == '2':
-            return 2
-        elif self.rank == '3':
-            return 3
-        elif self.rank == '4':
-            return 4
-        elif self.rank == '5':
-            return 5
-        elif self.rank == '6':
-            return 6
-        elif self.rank == '7':
-            return 7
-        elif self.rank == '8':
-            return 8
-        elif self.rank == '9':
-            return 11
-        elif self.rank == '10':
-            return 10
-        elif self.rank == 'J':
-            return 10
-        elif self.rank == 'Q':
-            return 10
-        elif self.rank == 'K':
-            return 10
-        else:
-            return -1   #rank error
+        rank_values = {
+        'A': 11, '2': 2, '3': 3, '4': 4, '5': 5,
+        '6': 6, '7': 7, '8': 8, '9': 9, '10': 10,
+        'J': 10, 'Q': 10, 'K': 10
+    }
+    return rank_values.get(self.rank, -1)
 
     def getColour(self):
         if self.suit == "club" or self.suit == "spade":
